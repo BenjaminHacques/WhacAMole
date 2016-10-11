@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Whac-A-Mole</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<aside id="panel">
+		<div>
+			Score : <span id="score"></span>
+		</div>
+		<div>
+			Life : <span id="life"></span>
+		</div>
+		<div>
+			Meilleur Score : <span id="highscore"></span>
+		</div>
+		<div>
+			<button id="start">Whac-A-Mole!</button>
+			<button id="reset">Reset</button>
+		</div>
+	</aside>
+	<main>
+		<div id="board"></div>
+	</main>
+	<script src="js/Hole.js"></script>
+	<script src="js/Mole.js"></script>
+	<script src="js/Board.js"></script>
+	<script src="js/Game.js"></script>
+	<script>
+
+	//var game = new Game(100, 14, 17, 6); //Game(hpMaximum, lignes, colonnes, nbrTaupes);
+	var game = new Game(3, 6, 6, 1);
+
+	document.getElementById('start').addEventListener('click', function(e){
+		game.start();
+		this.style.display = 'none';
+	});
+	document.getElementById('reset').addEventListener('click', function(e){
+		game.reset();
+	});
+	</script>
+</body>
+</html>
